@@ -88,6 +88,12 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      '@hoc': path.resolve(__dirname, paths.appSrc + '/hoc/'),
+      '@atom': path.resolve(__dirname, paths.appSrc + '/pages/atoms/'),
+      '@mol': path.resolve(__dirname, paths.appSrc + '/pages/molecules/'),
+      '@org': path.resolve(__dirname, paths.appSrc + '/pages/organisms/'),
+      '@mutation': path.resolve(__dirname, paths.appSrc + '/graphql/mutations.js'),
+      '@query': path.resolve(__dirname, paths.appSrc + '/graphql/queries.js'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -158,8 +164,38 @@ module.exports = {
           // in development "style" loader enables hot editing of CSS.
           {
             test: /\.scss$/,
-            include: paths.appSrc,
-            loaders: ["style", "css", "sass"]
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('sass-loader')
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+            ],
           },
           {
             test: /\.css$/,
