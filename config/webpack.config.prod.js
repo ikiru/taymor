@@ -99,7 +99,7 @@ module.exports = {
       '@mol': path.resolve(__dirname, paths.appSrc + '/pages/molecules/'),
       '@org': path.resolve(__dirname, paths.appSrc + '/pages/organisms/'),
       '@mutation': path.resolve(__dirname, paths.appSrc + '/graphql/mutations.js'),
-      '@query': path.resolve(__dirname, paths.appSrc + '/graphql/queries.js'),
+      '@query': path.resolve(__dirname, paths.appSrc + '/graphql/query.js'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -113,6 +113,9 @@ module.exports = {
   module: {
     strictExportPresence: true,
     rules: [
+
+
+
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
       // { parser: { requireEnsure: false } },
@@ -151,11 +154,19 @@ module.exports = {
           },
           // Process JS with Babel.
           {
-            test: /\.(js|jsx|mjs)$/,
+            test: /\.(js|jsx|mjs|)$/,
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-
+                      plugins: [
+          // ...
+          // Importing Ant here is not needed if you are using a .babelrc file
+          ['import', {
+            "libraryName": "antd",
+            "libraryDirectory": "es" // or "lib" for default
+            // No "style" setting
+          }],
+        ],
               compact: true,
             },
           },
@@ -171,15 +182,12 @@ module.exports = {
           // tags. If you use code splitting, however, any async bundles will still
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
-
           {
             test: /\.less$/,
             use: [
+              { loader: "style-loader" },
+              { loader: "css-loader" },
               {
-                loader: "style-loader"
-              }, {
-                loader: "css-loader"
-              }, {
                 loader: "less-loader",
                 options: {
                   javascriptEnabled: true //This is important!
@@ -187,41 +195,24 @@ module.exports = {
               }
             ]
           },
+          // Tell the DEFAULT sass-rule to ignore being used for sass imports in less files (sounds weird)
           {
             test: /\.scss$/,
-            use: [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                },
-              },
-              {
-                loader: require.resolve('sass-loader')
-              },
-              {
-                loader: require.resolve('postcss-loader'),
-                options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
-                  plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009',
-                    }),
-                  ],
-                },
-              },
-            ],
+            issuer: {
+              exclude: /\.less$/,
+            },
+            // ... other settings
           },
+          // Define a second rule for only being used from less files
+          // This rule will only be used for converting our sass-variables to less-variables
+          {
+            test: /\.scss$/,
+            issuer: /\.less$/,
+            use: {
+              loader: './src/sass/sassVarsToLess.js' // Change path if necessary
+            }
+          },
+
           {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract(

@@ -1,4 +1,4 @@
-import login from '@org/login';
+import login from '@org/login.js';
 import React, { Component } from 'react';
 import { Route } from "react-router-dom";
 import './sass/app.scss';
