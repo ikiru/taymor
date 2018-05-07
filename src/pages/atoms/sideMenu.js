@@ -1,12 +1,12 @@
 import React from 'react';
-import {Menu, Icon} from 'antd'
+import {Menu, Icon, Layout} from 'antd'
+
+const {Sider} = Layout;
 
 const sideMenu = (props) => {
   return (
     <div className='sideMenu'>
-      <div style={{
-        width: 256
-      }}>
+      <Sider>
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
@@ -29,7 +29,7 @@ const sideMenu = (props) => {
             <span>Settings</span>
           </Menu.Item>
         </Menu>
-      </div>
+      </Sider>
     </div>
   );
 }
