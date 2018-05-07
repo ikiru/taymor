@@ -1,6 +1,7 @@
 import login from '@org/login.js';
 import React, { Component } from 'react';
 import { Route } from "react-router-dom";
+import dashboard from './pages/dashboard';
 import './sass/app.scss';
 
 
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
 
       <Route path='/login' component={login}/>
+      <Route path='/Dashboard' component={dashboard}/>
 
 
 
