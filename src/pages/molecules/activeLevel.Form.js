@@ -1,6 +1,6 @@
 /*
   BetterOff Prodictions
-  Notes -
+  notes -
 
   created - Jeff Winkler  05/10/2018
 
@@ -8,21 +8,22 @@
   modified -
 
 */
+
 import React from 'react';
 import {Form, Input, Icon, Card, Layout} from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/colorForm.scss'
+import './sass/activeLevelForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;
 
-const colorForm = (props) => {
-  return <div className='colorForm'>
+const activeLevelForm = (props) => {
+  return <div className='activeLevelForm'>
   <Content>
-    <Card title='Add Base Costume Colors'>
+    <Card title='Add Active Level'>
       <Form onSubmit={this.handleSubmit}>
         <FormItem>
-          <Input prefix={< Icon type = "user" />} placeholder="Add Color"/>
+          <Input prefix={< Icon type = "user" />} placeholder="Add Active Level"/>
           <ButtonSubmit />
         </FormItem>
       </Form>
@@ -31,4 +32,4 @@ const colorForm = (props) => {
   </div>
 }
 
-export default colorForm;
+export default activeLevelForm;

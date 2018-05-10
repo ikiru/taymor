@@ -5,9 +5,12 @@ import ColorForm from '@mol/color.Form';
 import PeriodForm from '@mol/period.Form';
 import SecurityLevelForm from '@mol/securityLevel.Form';
 import SizeForm from '@mol/size.Form';
+import KeywordForm from '@mol/keyword.Form';
 import RoleForm from '@mol/role.Form';
 import RenterTypeForm from '@mol/renterType.Form';
+import BusinessTypeForm from '@mol/businessType.Form';
 import LocationTypeForm from '@mol/locationType.Form';
+import ActiveLevelForm from '@mol/activeLevel.Form';
 import { Layout } from 'antd';
 import React, { Component } from 'react';
 import './sass/dashboard.scss';
@@ -40,8 +43,11 @@ class dashboard extends Component {
               <SizeForm />
               <SecurityLevelForm />
               <RenterTypeForm />
+              <BusinessTypeForm />
               <LocationTypeForm />
+              <ActiveLevelForm />
               <RoleForm />
+              <KeywordForm />
             </Content>
             <Footer>
               <Foot/>

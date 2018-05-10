@@ -11,18 +11,18 @@
 import React from 'react';
 import {Form, Input, Icon, Card, Layout} from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/colorForm.scss'
+import './sass/keywordForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;
 
-const colorForm = (props) => {
-  return <div className='colorForm'>
+const keywordForm = (props) => {
+  return <div className='keywordForm'>
   <Content>
-    <Card title='Add Base Costume Colors'>
+    <Card title='Add Keyword'>
       <Form onSubmit={this.handleSubmit}>
         <FormItem>
-          <Input prefix={< Icon type = "user" />} placeholder="Add Color"/>
+          <Input prefix={< Icon type = "user" />} placeholder="Add Keywords"/>
           <ButtonSubmit />
         </FormItem>
       </Form>
@@ -31,4 +31,4 @@ const colorForm = (props) => {
   </div>
 }
 
-export default colorForm;
+export default keywordForm;
