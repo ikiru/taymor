@@ -1,30 +1,42 @@
-import sideMenu from '@atom/sideMenu';
-import header from '@atom/header';
+import SideMenu from '@atom/sideMenu';
+import Head from '@atom/header';
+import Foot from '@atom/footer';
+import ColorForm from '@mol/colorForm';
+import PeriodForm from '@mol/periodForm';
 import React, {Component} from 'react';
-import {Layout} from 'antd';
+
 import './sass/dashboard.scss'
-const {Sider} = Layout;
+import {Layout} from 'antd';
+const {Header, Footer, Sider, Content} = Layout;
 
 class dashboard extends Component {
   state = {
     collapsed: false
   };
-  onCollapse = (collapsed) => {
-    console.log(collapsed);
-    this.setState({collapsed});
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    })
   }
-
   render() {
     return (
       <div className='dashboard'>
         <Layout>
-          <Sider
-            collapsible
-            collapsed={this.state.collapsed}
-            onCollapse={this.onCollapse}>
-            <header />
-            <sideMenu />
+          <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+            <SideMenu/>
           </Sider>
+          <Layout>
+            <Header>
+              <Head/>
+            </Header>
+            <Content>
+              <ColorForm/>
+              <PeriodForm/>
+            </Content>
+            <Footer>
+              <Foot/>
+            </Footer>
+          </Layout>
         </Layout>
       </div>
     )

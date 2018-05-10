@@ -1,37 +1,49 @@
 import React from 'react';
-import {Menu, Icon, Layout} from 'antd'
-
-const {Sider} = Layout;
+import {Menu, Icon} from 'antd'
+import {Link} from 'react-router-dom';
+import './sass/sideMenu.scss'
 
 const sideMenu = (props) => {
+
   return (
     <div className='sideMenu'>
-      <Sider>
-        <Menu
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
-          mode="inline"
-          theme="dark">
-          <Menu.Item>
-            <Icon type="dashboard"/>
-            <span>Dashboard</span>
-          </Menu.Item>
-          <Menu.Item>
-            <Icon type="desktop"/>
-            <span>Business</span>
-          </Menu.Item>
-          <Menu.Item>
-            <Icon type="team"/>
-            <span>Renters</span>
-          </Menu.Item>
-          <Menu.Item>
-            <Icon type="setting"/>
-            <span>Settings</span>
-          </Menu.Item>
-        </Menu>
-      </Sider>
+      <div className="logo"/>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+
+        <Menu.Item key="1">
+          <Link to="/">
+          DashBoard</Link>
+          <Icon type="home"/>
+        </Menu.Item>
+
+        <Menu.Item key="2">
+          <Link to="/business">
+          Business</Link>
+          <Icon type="team"/>
+        </Menu.Item>
+
+        <Menu.Item key="3">
+          <Link to="/renter">
+            Contacts</Link>
+          <Icon type="contacts"/>
+        </Menu.Item>
+
+        <Menu.Item key="4">
+          <Link to="/admin">
+            Admin</Link>
+          <Icon type="code-o"/>
+        </Menu.Item>
+
+        <Menu.Item key="5">
+          <Link to="/settings">
+            Settings</Link>
+          <Icon type="setting"/>
+        </Menu.Item>
+
+      </Menu>
     </div>
-  );
-}
+  )
+
+};
 
 export default sideMenu;

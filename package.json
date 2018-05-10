@@ -105,7 +105,7 @@
   "devDependencies": {
     "babel-plugin-import": "^1.7.0",
     "css-loader": "^0.28.11",
-    "less": "^3.0.2",
+    "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "less-vars-to-js": "^1.2.1",
     "sass-loader": "^7.0.1",
