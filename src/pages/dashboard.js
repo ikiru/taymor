@@ -1,12 +1,16 @@
-import SideMenu from '@atom/sideMenu';
-import Head from '@atom/header';
 import Foot from '@atom/footer';
+import Head from '@atom/header';
+import SideMenu from '@atom/sideMenu';
 import ColorForm from '@mol/colorForm';
 import PeriodForm from '@mol/periodForm';
-import React, {Component} from 'react';
+import SecurityLevelForm from '@mol/securityLevelForm';
+import SizeForm from '@mol/sizeForm';
+import RoleForm from '@mol/roleForm';
+import RenterTypeForm from '@mol/renterTypeForm';
+import { Layout } from 'antd';
+import React, { Component } from 'react';
+import './sass/dashboard.scss';
 
-import './sass/dashboard.scss'
-import {Layout} from 'antd';
 const {Header, Footer, Sider, Content} = Layout;
 
 class dashboard extends Component {
@@ -30,8 +34,12 @@ class dashboard extends Component {
               <Head/>
             </Header>
             <Content>
-              <ColorForm/>
-              <PeriodForm/>
+              <ColorForm />
+              <PeriodForm />
+              <SizeForm />
+              <SecurityLevelForm />
+              <RenterTypeForm />
+              <RoleForm />
             </Content>
             <Footer>
               <Foot/>
