@@ -5,7 +5,7 @@ import './sass/footer.scss';
 const footer = (props) => {
   return (
     <div className='footer'>
-      <h1>BetterOff Costumes</h1>
+      <h4>BetterOff Costumes</h4>
     </div>
   )
 }

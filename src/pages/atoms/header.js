@@ -4,7 +4,7 @@ import './sass/header.scss';
 const header = (props) => {
   return (
     <div className='header'>
-        <h1>Header</h1>
+        <h1>header</h1>
     </div>
   )
 }
