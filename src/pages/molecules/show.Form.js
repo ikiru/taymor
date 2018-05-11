@@ -12,18 +12,18 @@
 import React from 'react';
 import {Form, Input, Icon, Card, Layout} from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/securityLevelForm.scss'
+import './sass/showForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;
 
-const securityLevelForm = (props) => {
-  return <div className='securityLevelForm'>
+const showForm = (props) => {
+  return <div className='showForm'>
   <Content>
-    <Card title='Add Security Level'>
+    <Card title='Add Show'>
       <Form onSubmit={this.handleSubmit}>
         <FormItem>
-          <Input prefix={< Icon type = "user" />} placeholder="Add security Level"/>
+          <Input prefix={< Icon type = "user" />} placeholder="Add Shows"/>
           <ButtonSubmit />
         </FormItem>
       </Form>
@@ -32,4 +32,4 @@ const securityLevelForm = (props) => {
   </div>
 }
 
-export default securityLevelForm;
+export default showForm;
