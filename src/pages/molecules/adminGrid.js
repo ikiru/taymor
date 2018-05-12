@@ -5,19 +5,69 @@ import './sass/adminGrid.scss'
 const adminGrid = (props) => {
   return (
     <div className='adminGrid'>
-      <Card title="Admin">
-        <Card.Grid className='gridStyle'>Color</Card.Grid>
-        <Card.Grid className='gridStyle'>Size</Card.Grid>
-        <Card.Grid className='gridStyle'>Time Period</Card.Grid>
-        <Card.Grid className='gridStyle'>Show</Card.Grid>
-        <Card.Grid className='gridStyle'>Keywords</Card.Grid>
-        <Card.Grid className='gridStyle'>Business Type</Card.Grid>
-        <Card.Grid className='gridStyle'>Renter Type</Card.Grid>
-        <Card.Grid className='gridStyle'>Active Level</Card.Grid>
-        <Card.Grid className='gridStyle'>Location Type</Card.Grid>
-        <Card.Grid className='gridStyle'>Role</Card.Grid>
-        <Card.Grid className='gridStyle'>Security Level</Card.Grid>
-        <Card.Grid className='gridStyle'>Size</Card.Grid>
+      <Card className='adminCard' title="Admin">
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Color</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Size</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Time Period</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Show</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>
+            Keywords</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Business Type</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>
+            Renter Types</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Active Level</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Location Type</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Role</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Security Level</p>
+        </Card.Grid>
+
+        <Card.Grid className='gridStyle'>
+          <img alt='qr code' src={require('@assets/img/qr-code.png')}/>
+          <p>Size</p>
+        </Card.Grid>
 
       </Card>
     </div>

@@ -1,8 +1,23 @@
-.adminGrid{
+.adminGrid {
     padding: 10px;
+    text-align: center;
+    background-color: lightgray;
+
+    p {
+        margin-top: 5px;
+        color: white;
+    }
 }
 
-.gridStyle{
-  width: 25%;
-  text-align: 'center';
+.gridStyle {
+    width: 25%;
+    text-align: 'center';
+    box-shadow: (black 2px 2px 10px);
+    border: none;
+
+}
+
+.adminCard {
+    background-image: url(../../../assets/img/yellow.jpg);
+
 }
