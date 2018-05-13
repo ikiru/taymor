@@ -11,13 +11,13 @@
 import React from 'react';
 import {Table} from 'antd';
 
-const colorTable = (props) => {
+const roleTable = (props) => {
   return (
-    <div className='coloTable'>
-      <Table>
-      </Table>
+     <div className='roleTable'>
+        <Table>
+        </Table>
     </div>
-  )
+ )
 }
 
-export default colorTable;
+export default roleTable;

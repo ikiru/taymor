@@ -9,8 +9,8 @@
 
 */
 import React from 'react';
-import SecurityLevelForm from '../molecules/form/securityLevel.Form';
-import SecurityLevelTable from '../molecules/table/securityLevel.Table';
+import SecurityLevelForm from '../../molecules/form/securityLevel.Form';
+import SecurityLevelTable from '../../molecules/table/securityLevel.Table';
 import {Card, Row} from 'antd';
 
 const securityLevelAdmin = (props) => {

@@ -9,8 +9,8 @@
 
 */
 import React from 'react';
-import showForm from '../molecules/show.Form';
-import ShowTable from '../molecules/show.Table';
+import showForm from '../../molecules/form/show.Form';
+import ShowTable from '../../molecules/table/show.Table';
 import {Card, Row} from 'antd';
 
 const showAdmin = (props) => {

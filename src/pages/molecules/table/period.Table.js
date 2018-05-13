@@ -11,13 +11,12 @@
 import React from 'react';
 import {Table} from 'antd';
 
-const colorTable = (props) => {
+const periodTable = (props) => {
   return (
-    <div className='coloTable'>
-      <Table>
-      </Table>
+    <div className='periodTable'>
+      <Table></Table>
     </div>
   )
 }
 
-export default colorTable;
+export default periodTable;
