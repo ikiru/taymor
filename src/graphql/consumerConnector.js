@@ -1,3 +1,13 @@
+/*
+  BetterOff Prodictions
+  Notes -
+
+  created - Jeff Winkler  05/15/2018
+
+***********************************************************************
+  modified -
+
+*/
 import React, { Component } from 'react';
 import { ApolloConsumer  } from "react-apollo";
 const consummerConnector = () => WrappedComponent => {
@@ -9,7 +19,7 @@ const consummerConnector = () => WrappedComponent => {
             <WrappedComponent
             apolloClient={client}
             {...this.props}
-            />          
+            />
         )}
         </ApolloConsumer>
       )

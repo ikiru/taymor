@@ -1,3 +1,13 @@
+/*
+  BetterOff Prodictions
+  Notes -
+
+  created - Jeff Winkler  05/15/2018
+
+***********************************************************************
+  modified -
+
+*/
 import React, { Component } from 'react';
 import { Query } from "react-apollo";
 const queryConnector = (queryGQL, variables) => WrappedComponent => {
