@@ -12,7 +12,7 @@
 import React from 'react';
 import {Form, Input, Icon, Card, Layout} from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/sizeForm.scss'
+import '../sass/sizeForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;

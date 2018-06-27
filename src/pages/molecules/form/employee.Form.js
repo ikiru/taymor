@@ -19,7 +19,7 @@ import {
   Select
 } from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/employeeForm.scss'
+import '../sass/employeeForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;

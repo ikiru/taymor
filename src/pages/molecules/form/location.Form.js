@@ -19,7 +19,6 @@ import {
   Select
 } from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/businessForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;

@@ -12,7 +12,7 @@
 import React from 'react';
 import {Form, Input, Icon, Card, Layout} from 'antd';
 import ButtonSubmit from '@atom/buttons/button.Submit.js'
-import './sass/securityLevelForm.scss'
+import '../sass/securityLevelForm.scss'
 
 const FormItem = Form.Item;
 const {Content} = Layout;
